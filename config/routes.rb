@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   #rest только new, create, причем new путь просто /contacts
   resource :contacts, only: [:new, :create], path_names: { :new => '' }
 
+  #смотри разницу между resource и resources
   #создаём rest весь список
   resources :articles
 end
