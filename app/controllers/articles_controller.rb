@@ -3,6 +3,12 @@ class ArticlesController < ApplicationController
   def new
   end
 
+
+  def show
+
+      @article = Article.find(params[:id])
+  end
+
   #render - функция возвращает страницу
   # plain: params[:article].inspect - параметр функции
   # plain: - ключ хеша params[:article].inspect - значение хеша
