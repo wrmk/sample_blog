@@ -11,6 +11,7 @@ class ArticlesController < ApplicationController
 
     if @article.valid?
       @article.save
+      redirect_to @article #редирект на /articles/id
     else
       render action: 'new'
     end
