@@ -62,7 +62,7 @@ class ArticlesController < ApplicationController
 
   private 
 
-  def article_params
+  def article_params #метод чтобы указать какие параметры класс может вытянуть из формы
     params.require(:article).permit(:title, :text)
   end
 

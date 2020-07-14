@@ -12,5 +12,9 @@ Rails.application.routes.draw do
 
   #смотри разницу между resource и resources
   #создаём rest весь список
-  resources :articles
+  resources :articles do
+    resources :comments #создаём маршруты для комментариев внутри статьи
+  end
+ 
+
 end
