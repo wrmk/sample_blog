@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+
+  before_action :authenticate_user! #создание формы авторизации на /articles и всем вложенностям
  
   def index
     @articles = Article.all
