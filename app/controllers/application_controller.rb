@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  before_action :configure_permitted_parameters, if :devise_controller? # выполнить функцию такую то ДО выполнения контроллера, если функция вызывается для devise
+  before_action :configure_permitted_parameters, if: :devise_controller? # выполнить функцию такую то ДО выполнения контроллера, если функция вызывается для devise
 
   private
 
