@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   private
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :username #добавили запрос на указание имя пользователя при логине
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username]) #добавили запрос на указание имя пользователя при логине
   end
 end
