@@ -1,5 +1,7 @@
-<h1><%= @article.title%></h1> 
+<head><h1><%= @article.title%></h1> </head>
 
+
+<body>
 <p>
     <%= @article.text %>
 </p>
@@ -18,9 +20,9 @@
 
 <%= form_for([@article, @article.comments.build]) do |f| %>  
   <p>
+    <!-- get username from  current user-->
     <% if user_signed_in? %>
       <%= f.hidden_field :author, :value => current_user.username %>
-
     <% else %>
       <%= link_to 'Sign in', article_comments_path %> to leave comment
   <%end%>
@@ -37,3 +39,5 @@
   </p>
 
 <%end%>
+
+</body>
