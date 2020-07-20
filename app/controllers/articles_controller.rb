@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-  before_action :authenticate_user!, :only => [:new, :create] #создание формы авторизации на /articles к указанным вложенностям
+  before_action :authenticate_user!, :only => [:new, :create, :edit,:destroy] #создание формы авторизации на /articles к указанным вложенностям
  
   def index
     @articles = Article.all
