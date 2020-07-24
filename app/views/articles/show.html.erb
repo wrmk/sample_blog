@@ -2,42 +2,47 @@
 
 
 <body>
-<p>
-    <%= @article.text %>
-</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>
+            <%= @article.text %>
+        </p>
 
-<h2>Comments</h2>
-<% @article.comments.each do |comment| %>
+        <h2>Comments</h2>
+        <% @article.comments.each do |comment| %>
 
-  <h3><%= comment.author %></h3>
-  <p><%= comment.body %></p>
+          <h3><%= comment.author %></h3>
+          <p><%= comment.body %></p>
 
-<%end%>
+        <%end%>
 
 
 
-<h2>Leave comment</h2>
+        <h2>Leave comment</h2>
 
-<%= form_for([@article, @article.comments.build]) do |f| %>  
-  <p>
-    <!-- get username from  current user-->
-    <% if user_signed_in? %>
-      <%= f.hidden_field :author, :value => current_user.username %>
-    <% else %>
-      <%= link_to 'Sign in', article_comments_path %> to leave comment
-  <%end%>
-    
-  </p> 
+        <%= form_for([@article, @article.comments.build]) do |f| %>  
+          <p>
+            <!-- get username from  current user-->
+            <% if user_signed_in? %>
+              <%= f.hidden_field :author, :value => current_user.username %>
+            <% else %>
+              <%= link_to 'Sign in', article_path %> to leave comment
+          <%end%>
+            
+          </p> 
 
-  <p>
-    <%= f.label :body %><br/>
-    <%= f.text_area :body %>
-  </p> 
+          <p>
+            <%= f.label :body %><br/>
+            <%= f.text_area :body %>
+          </p> 
 
-  <p>
-    <%= f.submit %>
-  </p>
+          <p>
+            <%= f.submit %>
+          </p>
 
-<%end%>
-
+        <%end%>
+      </div>
+    </div>
+  </div>
 </body>
