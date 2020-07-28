@@ -13,6 +13,6 @@ feature "contact creation" do
     fill_in :contact_message, :with => 'blablabla' 
     click_button 'Send message'
 
-    expect(page).to have_content 'Thanks' #I18n.t('contacts.contact_us')
+    expect(page).to have_content 'Thanks'
   end
 end
